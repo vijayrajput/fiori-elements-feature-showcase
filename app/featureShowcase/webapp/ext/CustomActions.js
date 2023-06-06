@@ -9,7 +9,11 @@ sap.ui.define([
             let sActionName = "service1.EntityContainer/criticalAction";
 			let mParameters = {
 				//contexts: oEvent.getSource().getBindingContext(),
-				model: this.editFlow.getView().getModel()	
+				model: this.editFlow.getView().getModel(),
+                parameterValues: [
+					{ name: "input", value: 'Send from UI' }
+				],
+                skipParameterDialog: true	
 			};
 			this.editFlow.invokeAction(sActionName, mParameters).then(function(data){
 				MessageBox.alert(data.value);

@@ -120,7 +120,7 @@ module.exports = async (srv) => {
 
     //Returns a message toast at the bottom of the screen, indicating that the action was triggered.
     srv.on("criticalAction", async req => {
-        return  'return from Custom Action'; //req.notify(`Critical action pressed`); //Search-Term: #MessageToast
+        return  'return from Custom Action with value:' + req.data.input; //req.notify(`Critical action pressed`); //Search-Term: #MessageToast
     });
 
     //Reseting all entities to there default state
