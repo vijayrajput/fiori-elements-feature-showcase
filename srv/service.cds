@@ -70,7 +70,7 @@ service service1 @(path : '/srv1') {
     //Search-Terms: #UnboundAction
     action unboundAction(@(title : '{i18n>inputValue}')input : String);
 
-    action criticalAction();
+    action criticalAction() returns String;
 
 
     entity ChildEntities1       as projection on persistence.ChildEntities1;

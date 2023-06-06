@@ -5,8 +5,16 @@ sap.ui.define([
     "use strict";
     //Search-Term: CustomActions
     return {
-        messageBox: function() {
-            MessageBox.alert("Button pressed");
+        messageBox: function(oEvent) {
+            let sActionName = "service1.EntityContainer/criticalAction";
+			let mParameters = {
+				//contexts: oEvent.getSource().getBindingContext(),
+				model: this.editFlow.getView().getModel()	
+			};
+			this.editFlow.invokeAction(sActionName, mParameters).then(function(data){
+				MessageBox.alert(data.value);
+			}); //SAP Fiori elements EditFlow API
+
         },
         enabled : function() {
             return true;
